@@ -21,7 +21,7 @@ function game() {
             console.log(computerSelection);
         }
 
-        function getPlayerSelection() {
+        function getPlayerChoice() {
             playerSelection = prompt("Choose among Rock, Paper or Scissors", "");
             playerSelection.toLowerCase();
             
@@ -34,7 +34,7 @@ function game() {
             }
         }
         
-        getPlayerSelection();
+        getPlayerChoice();
         getComputerChoice();
 
         const WIN = "You won!";

@@ -46,6 +46,8 @@ function game() {
             ) {
             message = "You won!";
             playerPoint += 1;
+            playerScore += playerPoint;
+            computerScore += computerPoint;
             console.log(message);
             console.log("Player pts: " + playerPoint);
             console.log("Computer pts: " + computerPoint);
@@ -56,6 +58,8 @@ function game() {
             ) {
             computerPoint += 1;
             message = "You lost!";
+            playerScore += playerPoint;
+            computerScore += computerPoint;
             console.log(message);
             console.log("Player pts: " + playerPoint);
             console.log("Computer pts: " + computerPoint);
@@ -63,20 +67,11 @@ function game() {
             message = "It's a tie";
             playerPoint += 0;
             computerPoint += 0;
+            playerScore += playerPoint;
+            computerScore += computerPoint;
             console.log(message);
             console.log("Player pts: " + playerPoint);
             console.log("Computer pts: " + computerPoint);
-        }
-
-        if (message === "You won!") {
-            playerScore += playerPoint;
-            computerScore += computerPoint;
-        } else if (message === "You lost!") {
-            playerScore += playerPoint;
-            computerScore += computerPoint;
-        } else {
-            playerScore += playerPoint;
-            computerScore += computerPoint;
         }
 
         console.log("Player Score: " + playerScore);

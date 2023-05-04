@@ -11,16 +11,13 @@ let computerScore = 0;
 const buttonClicked = e => {
     buttonId = e.target.id;
     if (playerScore == 5 && playerScore > computerScore) {
-        output.textContent = 'Player is the final winner!';
-        output.textContent = 'Refresh the page for a new round';
+        output.textContent = 'Player is the final winner! Refresh the page for a new round';
         button.removeEventListener('click', buttonClicked);
     } else if (computerScore == 5 && computerScore > playerScore) {
-        output.textContent = 'Computer is the final winner!';
-        output.textContent = 'Refresh the page for a new round';
+        output.textContent = 'Computer is the final winner! Refresh the page for a new round';
         button.removeEventListener('click', buttonClicked);
     } else if (computerScore == 5 && playerScore == 5) {
-        output.textContent = 'Peace and love, you both won :)';
-        output.textContent = 'Refresh the page for a new round';
+        output.textContent = 'Peace and love, you both won :) Refresh the page for a new round';
         button.removeEventListener('click', buttonClicked);
     } 
     playRound();

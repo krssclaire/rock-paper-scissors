@@ -9,3 +9,6 @@ This is a simple Rock Paper Scissors game in which the Player can play against t
 
 ### Design
 The design is responsive on the main devices such as mobile phone/tablet and desktop, as long as the device has a screen height bigger than 720px.
+
+#### Credits
+* Reset arrow created by Freepik - Flaticon --> https://www.flaticon.com/free-icons/reset 

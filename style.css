@@ -52,7 +52,7 @@ header {
     height: 100%;
 }
 
-button, .computer div {
+.player button, .computer div {
     background-color: whitesmoke;
     color: black;
     text-align: center;
@@ -65,7 +65,7 @@ button, .computer div {
     border-radius: 5px;
 }
 
-button:hover {
+.player button:hover {
     background-color: transparent;
     color: white;
 }
@@ -80,8 +80,48 @@ button:hover {
     text-align: center;
 }
 
+.invisible {
+    display: none;
+}
+
+.restart {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.9);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.restart p {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.restart-btn {
+    padding: 20px;
+    border: solid whitesmoke 2px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.restart-btn:hover {
+    transform: scale(1.2, 1.2);
+}
+
+.restart-btn img {
+    width: 50px;
+    height: 50px;
+}
+
+
 /* Desktop Version */
-@media screen and (min-width: 765px) {
+@media screen and (min-width: 770px) {
     .score {
         padding: 15px;
         margin-bottom: 10px;
@@ -90,13 +130,19 @@ button:hover {
     .player, .computer {
         gap: 50px;
     }
-    button, .computer div {
+    .player button, .computer div {
         font-size: 1.7rem;
         width: 15vw;
         min-width: 160px;
 
     }
     .message {
-        font-size: 1.2em;
+        font-size: 2em;
+    }
+    .restart {
+        gap: 30px;
+    }
+    .restart p {
+        font-size: 2rem;
     }
 }

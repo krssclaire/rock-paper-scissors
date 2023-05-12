@@ -4,28 +4,26 @@ const computerRock = document.querySelector('#computerRock');
 const computerPaper = document.querySelector('#computerPaper');
 const computerScissors = document.querySelector('#computerScissors');
 const output = document.querySelector('.message');
-const btn = document.getElementsByTagName('button');
+const buttons = document.querySelectorAll('button');
+const restart = document.querySelector('.invisible');
+const restartBtn = document.querySelector('.restart-btn');
+let finalOutput = document.querySelector('#final-output');
 let playerScore = 0;
 let computerScore = 0;
 
-const buttonClicked = e => {
-    buttonId = e.target.id;
-    if (playerScore == 5 && playerScore > computerScore) {
-        output.textContent = 'Player is the final winner! Refresh the page for a new round';
-        button.removeEventListener('click', buttonClicked);
-    } else if (computerScore == 5 && computerScore > playerScore) {
-        output.textContent = 'Computer is the final winner! Refresh the page for a new round';
-        button.removeEventListener('click', buttonClicked);
-    } else if (computerScore == 5 && playerScore == 5) {
-        output.textContent = 'Peace and love, you both won :) Refresh the page for a new round';
-        button.removeEventListener('click', buttonClicked);
-    } 
-    playRound();
-}
-
-for (let button of btn) {
-    button.addEventListener('click', buttonClicked);
-}
+buttons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        buttonId = e.target.id;
+        playRound();
+        if (playerScore == 5 && playerScore > computerScore) {
+            finalOutput.textContent = 'You are the final winner! Do you want to start a new round?';
+            restart.classList.add('restart');
+        } else if (computerScore == 5 && computerScore > playerScore) {
+            finalOutput.textContent = 'Computer is the final winner! Do you want to retry?';
+            restart.classList.add('restart');
+        }
+    })
+});
 
 function playRound(playerSelection, computerSelection) {
     playerSelection = buttonId;
@@ -86,3 +84,5 @@ function playRound(playerSelection, computerSelection) {
     displayedPlayerScore.textContent = `Player: ${playerScore}`;
     displayedComputerScore.textContent = `Computer: ${computerScore}`;
 }
+
+restartBtn.addEventListener('click', () => document.location.reload());

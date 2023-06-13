@@ -29,7 +29,6 @@ Live demo: [Rock Paper Scissors](https://krssclaire.github.io/rock-paper-scissor
 * The design is responsive on all devices
 
 
-
 ## What I learned
 
 * Basic JavaScript logic and DOM manipulation
